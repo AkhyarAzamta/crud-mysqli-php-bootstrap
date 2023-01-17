@@ -2,7 +2,7 @@
 $host       = "localhost";
 $user       = "root";
 $pass       = "";
-$db         = "akademik";
+$db         = "db_mahasiswa";
 
 $koneksi    = mysqli_connect($host, $user, $pass, $db);
 if (!$koneksi) { //cek koneksi
@@ -11,6 +11,7 @@ if (!$koneksi) { //cek koneksi
 $nim        = "";
 $nama       = "";
 $alamat     = "";
+$pekerjaan     = "";
 $jenis_kelamin  = "";
 $sukses     = "";
 $error      = "";
@@ -38,6 +39,7 @@ if ($op == 'edit') {
     $nim        = $r1['nim'];
     $nama       = $r1['nama'];
     $alamat     = $r1['alamat'];
+    $pekerjaan     = $r1['pekerjaan'];
     $jenis_kelamin  = $r1['jenis_kelamin'];
 
     if ($nim == '') {
@@ -48,11 +50,12 @@ if (isset($_POST['simpan'])) { //untuk create
     $nim        = $_POST['nim'];
     $nama       = $_POST['nama'];
     $alamat     = $_POST['alamat'];
+    $pekerjaan     = $_POST['pekerjaan'];
     $jenis_kelamin  = $_POST['jenis_kelamin'];
 
-    if ($nim && $nama && $alamat && $jenis_kelamin) {
+    if ($nim && $nama && $alamat && $pekerjaan && $jenis_kelamin) {
         if ($op == 'edit') { //untuk update
-            $sql1       = "update mahasiswa set nim = '$nim',nama='$nama',alamat = '$alamat',jenis_kelamin='$jenis_kelamin' where id = '$id'";
+            $sql1       = "update mahasiswa set nim = '$nim',nama='$nama',alamat = '$alamat',pekerjaan = '$pekerjaan',jenis_kelamin='$jenis_kelamin' where id = '$id'";
             $q1         = mysqli_query($koneksi, $sql1);
             if ($q1) {
                 $sukses = "Data berhasil diupdate";
@@ -60,7 +63,7 @@ if (isset($_POST['simpan'])) { //untuk create
                 $error  = "Data gagal diupdate";
             }
         } else { //untuk insert
-            $sql1   = "insert into mahasiswa(nim,nama,alamat,jenis_kelamin) values ('$nim','$nama','$alamat','$jenis_kelamin')";
+            $sql1   = "insert into mahasiswa(nim,nama,alamat,pekerjaan,jenis_kelamin) values ('$nim','$nama','$alamat','$pekerjaan','$jenis_kelamin')";
             $q1     = mysqli_query($koneksi, $sql1);
             if ($q1) {
                 $sukses     = "Berhasil memasukkan data baru";
@@ -80,7 +83,7 @@ if (isset($_POST['simpan'])) { //untuk create
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Mahasiswa</title>
+    <title>Data Pekerjaan Mahasiswa Karyawan Teknik Uninus</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <style>
         .mx-auto {
@@ -97,7 +100,7 @@ if (isset($_POST['simpan'])) { //untuk create
     <div class="mx-auto m-5">
         <!-- untuk memasukkan data -->
         <div class="card">
-            <div class="card-header">
+            <div class="card-header bg-info bg-gradient ">
                 Create / Edit Data
             </div>
             <div class="card-body">
@@ -141,6 +144,12 @@ if (isset($_POST['simpan'])) { //untuk create
                         </div>
                     </div>
                     <div class="mb-3 row">
+                        <label for="pekerjaan" class="col-sm-2 col-form-label">Pekerjaan</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="pekerjaan" name="pekerjaan" value="<?php echo $pekerjaan ?>">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
                         <label for="jenis_kelamin" class="col-sm-2 col-form-label">Jenis Kelamin</label>
                         <div class="col-sm-10">
                             <select class="form-control" name="jenis_kelamin" id="jenis_kelamin">
@@ -151,7 +160,7 @@ if (isset($_POST['simpan'])) { //untuk create
                         </div>
                     </div>
                     <div class="col-12">
-                        <input type="submit" name="simpan" value="Simpan Data" class="btn btn-primary" />
+                        <input type="submit" name="simpan" value="Simpan Data" class="btn btn-success" />
                     </div>
                 </form>
             </div>
@@ -159,17 +168,18 @@ if (isset($_POST['simpan'])) { //untuk create
 
         <!-- untuk mengeluarkan data -->
         <div class="card">
-            <div class="card-header text-white bg-secondary">
-                Data Mahasiswa
+            <div class="card-header text-white bg-gradient bg-primary">
+            Data Pekerjaan Mahasiswa Karyawan Teknik Uninus
             </div>
             <div class="card-body">
-                <table class="table">
+                <table class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">NO</th>
                             <th scope="col">NIM</th>
                             <th scope="col">Nama</th>
                             <th scope="col">Alamat</th>
+                            <th scope="col">Pekerjaan</th>
                             <th scope="col">Jenis Kelamin</th>
                             <th scope="col">Aksi</th>
                         </tr>
@@ -184,6 +194,7 @@ if (isset($_POST['simpan'])) { //untuk create
                             $nim        = $r2['nim'];
                             $nama       = $r2['nama'];
                             $alamat     = $r2['alamat'];
+                            $pekerjaan     = $r2['pekerjaan'];
                             $jenis_kelamin  = $r2['jenis_kelamin'];
 
                         ?>
@@ -192,6 +203,7 @@ if (isset($_POST['simpan'])) { //untuk create
                                 <td scope="row"><?php echo $nim ?></td>
                                 <td scope="row"><?php echo $nama ?></td>
                                 <td scope="row"><?php echo $alamat ?></td>
+                                <td scope="row"><?php echo $pekerjaan ?></td>
                                 <td scope="row"><?php echo $jenis_kelamin?></td>
                                 <td scope="row">
                                     <a href="index.php?op=edit&id=<?php echo $id ?>"><button type="button" class="btn btn-warning">Edit</button></a>
