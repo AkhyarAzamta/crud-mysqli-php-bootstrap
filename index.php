@@ -61,13 +61,14 @@ include 'crud.php';
       <div class="collapse navbar-collapse justify-content-evenly " id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
-          <a class="nav-link" href="#pmb">Daftar</a>
+          <a class="nav-link" href="#pmb">PPDB</a>
           <a class="nav-link" href="#paud">PAUD</a>
           <a class="nav-link" href="#tk">TK</a>
           <a class="nav-link" href="#about">About</a>
         </div>
       </div>
-      <a class="btn btn-light" href="page_crud.php" role="button">CRUD</a>
+      <a class="btn btn-light" href="daftar.php" role="button">Daftar</a>
+      <a class="btn btn-light mx-2 " href="page_crud.php" role="button">Admin</a>
     </div>
   </nav>
 </head>
