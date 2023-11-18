@@ -126,13 +126,13 @@ if (isset($_POST['simpan'])) {
           <div class="mb-3 row">
             <label for="nik" class="col-sm-2 col-form-label">NIK</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="nik" name="nik" value="<?php echo $nik ?>">
+              <input type="text" class="form-control" id="nik" name="nik" value="<?php echo $nik ?>" autocomplete="off">
             </div>
           </div>
           <div class="mb-3 row">
             <label for="nama" class="col-sm-2 col-form-label">Nama Lengkap</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="nama" name="nama" value="<?php echo $nama ?>">
+              <input type="text" class="form-control" id="nama" name="nama" value="<?php echo $nama ?>" autocomplete="off">
             </div>
           </div>
           <div class="mb-3 row">
@@ -154,31 +154,31 @@ if (isset($_POST['simpan'])) {
           <div class="mb-3 row">
             <label for="agama" class="col-sm-2 col-form-label">Agama</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="agama" name="agama" value="<?php echo $agama ?>">
+              <input type="text" class="form-control" id="agama" name="agama" value="<?php echo $agama ?>" autocomplete="off">
             </div>
           </div>
           <div class="mb-3 row">
             <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="alamat" name="alamat" value="<?php echo $alamat ?>">
+              <input type="text" class="form-control" id="alamat" name="alamat" value="<?php echo $alamat ?>" autocomplete="off">
             </div>
           </div>
           <div class="mb-3 row">
             <label for="usia" class="col-sm-2 col-form-label">Usia</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="usia" name="usia" value="<?php echo $usia ?>">
+              <input type="text" class="form-control" id="usia" name="usia" value="<?php echo $usia ?>" autocomplete="off">
             </div>
           </div>
           <div class="mb-3 row">
             <label for="orang_tua" class="col-sm-2 col-form-label">Orang Tua/Wali</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="orang_tua" name="orang_tua" value="<?php echo $orang_tua ?>">
+              <input type="text" class="form-control" id="orang_tua" name="orang_tua" value="<?php echo $orang_tua ?>" autocomplete="off">
             </div>
           </div>
           <div class="mb-3 row">
             <label for="nomor_telepon" class="col-sm-2 col-form-label">Nomor Telepon</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="nomor_telepon" name="nomor_telepon" value="<?php echo $nomor_telepon ?>">
+              <input type="text" class="form-control" id="nomor_telepon" name="nomor_telepon" value="<?php echo $nomor_telepon ?>" autocomplete="off">
             </div>
           </div>
           <div class="col-12">

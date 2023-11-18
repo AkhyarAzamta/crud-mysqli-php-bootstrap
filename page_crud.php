@@ -62,25 +62,25 @@ include 'crud.php';
                     <div class="mb-3 row">
                         <label for="nip" class="col-sm-2 col-form-label">NIP</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="nip" name="nip" value="<?php echo $nip ?>">
+                            <input type="text" class="form-control" id="nip" name="nip" value="<?php echo $nip ?>" autocomplete="off">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="nama" name="nama" value="<?php echo $nama ?>">
+                            <input type="text" class="form-control" id="nama" name="nama" value="<?php echo $nama ?>" autocomplete="off">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="alamat" name="alamat" value="<?php echo $alamat ?>">
+                            <input type="text" class="form-control" id="alamat" name="alamat" value="<?php echo $alamat ?>" autocomplete="off">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="jabatan" class="col-sm-2 col-form-label">jabatan</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="jabatan" name="jabatan" value="<?php echo $jabatan ?>">
+                            <input type="text" class="form-control" id="jabatan" name="jabatan" value="<?php echo $jabatan ?>" autocomplete="off">
                         </div>
                     </div>
                     <div class="mb-3 row">
