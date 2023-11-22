@@ -1,16 +1,6 @@
 <?php
 include 'koneksi.php';
-$nik            = "";
-$nama           = "";
-$tempat_tanggal_lahir = "";
-$jenis_kelamin  = "";
-$agama          = "";
-$alamat         = "";
-$usia           = "";
-$orang_tua      = "";
-$nomor_telepon  = "";
-$sukses         = "";
-$error          = "";
+
 if (isset($_GET['op'])) {
     $op = $_GET['op'];
 } else {
